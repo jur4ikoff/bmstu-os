@@ -34,8 +34,9 @@ void bakery_prog_1(char* host) {
         result_2 = bakery_service_1(result_1, clnt);
         if (result_2 > 0) {
             printf("%d %d\n", bakery_proc_1_arg, result_2);
+            received = 1;
         } else {
-            printf("%d\n is waiting", bakery_proc_1_arg);
+            printf("%d is waiting\n", bakery_proc_1_arg);
         }
     }
     clnt_destroy(clnt);
