@@ -15,6 +15,7 @@ get_number_1_svc(void *argp, int *result, struct svc_req *rqstp)
 {
   bool_t retval = TRUE;
   int max = 0;
+  printf("1\n");
 
   //pthread_mutex_lock(&mutex);
   *result = client_num;

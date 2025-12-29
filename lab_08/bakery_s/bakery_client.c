@@ -35,10 +35,9 @@ void bakery_prog_1(char* host) {
     while (received == 0) {
         result_2 = bakery_service_1(result_1, clnt);
         if (result_2 > 0) {
-            printf("Client #%d got result: %d\n", bakery_proc_1_arg, result_2);
-            received = 1;
+            printf("%d %d\n", bakery_proc_1_arg, result_2);
         } else {
-            printf("Client #%d is waiting\n", bakery_proc_1_arg);
+            printf("%d\n", bakery_proc_1_arg);
         }
     }
 #ifndef DEBUG
