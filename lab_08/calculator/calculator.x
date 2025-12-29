@@ -8,7 +8,7 @@ struct CALCULATOR
     int op;        
     float arg1;    
     float arg2;    
-    float result; 
+    float result;
 };
 
 program CALCULATOR_PROG
