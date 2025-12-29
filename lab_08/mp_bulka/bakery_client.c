@@ -65,8 +65,7 @@ bakery_prog_1(char *host)
 		}
 		else
 		{
-			usleep(100);
-			printf("waiting\n");
+			printf("%d\n is waiting", bakery_proc_1_arg);
 		}
 		}
 #ifndef	DEBUG

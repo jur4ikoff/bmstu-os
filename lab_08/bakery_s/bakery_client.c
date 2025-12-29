@@ -22,13 +22,11 @@ void bakery_prog_1(char* host) {
     enum clnt_stat retval_2;
     int result_2;
 
-#ifndef DEBUG
     clnt = clnt_create(host, BAKERY_PROG, BAKERY_VER, "tcp");
     if (clnt == NULL) {
         clnt_pcreateerror(host);
         exit(1);
     }
-#endif
 
     result_1 = get_number_1(clnt);
     int received = 0;
@@ -37,13 +35,12 @@ void bakery_prog_1(char* host) {
         if (result_2 > 0) {
             printf("%d %d\n", bakery_proc_1_arg, result_2);
         } else {
-            printf("%d\n", bakery_proc_1_arg);
+            printf("%d\n is waiting", bakery_proc_1_arg);
         }
     }
-#ifndef DEBUG
     clnt_destroy(clnt);
-#endif
 }
+
 
 int main(int argc, char* argv[]) {
     char* host;
