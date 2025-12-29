@@ -10,13 +10,13 @@
 static struct timeval TIMEOUT = { 25, 0 };
 
 int *
-get_ticket_number_1(int *argp, CLIENT *clnt)
+get_number_1(void *argp, CLIENT *clnt)
 {
 	static int clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, GET_TICKET_NUMBER,
-		(xdrproc_t) xdr_int, (caddr_t) argp,
+	if (clnt_call (clnt, GET_NUMBER,
+		(xdrproc_t) xdr_void, (caddr_t) argp,
 		(xdrproc_t) xdr_int, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -24,15 +24,15 @@ get_ticket_number_1(int *argp, CLIENT *clnt)
 	return (&clnt_res);
 }
 
-quad_t *
-get_service_time_1(int *argp, CLIENT *clnt)
+int *
+bakery_service_1(int *argp, CLIENT *clnt)
 {
-	static quad_t clnt_res;
+	static int clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, GET_SERVICE_TIME,
+	if (clnt_call (clnt, BAKERY_SERVICE,
 		(xdrproc_t) xdr_int, (caddr_t) argp,
-		(xdrproc_t) xdr_quad_t, (caddr_t) &clnt_res,
+		(xdrproc_t) xdr_int, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
 	}

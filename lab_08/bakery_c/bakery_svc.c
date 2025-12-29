@@ -16,54 +16,15 @@
 #define SIG_PF void(*)(int)
 #endif
 
-struct thread_data_t
-{
-	struct svc_req *rqstp;
-	SVCXPRT *transp;
-};
-typedef struct thread_data_t thread_data_t;
-pthread_attr_t attr;
-pthread_t thread;
-pthread_mutex_t send_mutex = PTHREAD_MUTEX_INITIALIZER;
-
-static void *get_number_worker(void *data_ptr)
-{
-	union {
-		int get_number_1_res;
-	} result;
-	bool_t retval;
-	bool_t (*local)(char *, void *, struct svc_req *) = (bool_t (*) (char *, void *,  struct svc_req *))get_number_1_svc;
-
-	thread_data_t *thread_data_ptr = (thread_data_t *)data_ptr;
-	struct svc_req *rqstp = thread_data_ptr->rqstp;
-	register SVCXPRT *transp = thread_data_ptr->transp;
-	
-	pthread_mutex_lock(&send_mutex);
-	retval = (bool_t) (*local)((char *)NULL, (void *)&result, rqstp);
-	if (retval > 0 && !svc_sendreply(transp, (xdrproc_t) xdr_int, (char *)&result)) {
-		svcerr_systemerr (transp);
-	}
-	pthread_mutex_unlock(&send_mutex);
-	if (!bakery_prog_1_freeresult (transp, (xdrproc_t) xdr_int, (caddr_t) &result))
-		fprintf (stderr, "%s", "unable to free results");
-
-	free(data_ptr);
-	return NULL;
-}
-
 static void
 bakery_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
 	union {
 		int bakery_proc_1_arg;
 	} argument;
-	union {
-		int get_number_1_res;
-		struct BAKERY_RESULT bakery_proc_1_res;
-	} result;
-	bool_t retval;
+	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
-	bool_t (*local)(char *, void *, struct svc_req *);
+	char *(*local)(char *, struct svc_req *);
 
 	switch (rqstp->rq_proc) {
 	case NULLPROC:
@@ -73,61 +34,31 @@ bakery_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 	case GET_NUMBER:
 		_xdr_argument = (xdrproc_t) xdr_void;
 		_xdr_result = (xdrproc_t) xdr_int;
-		local = (bool_t (*) (char *, void *,  struct svc_req *))get_number_1_svc;
+		local = (char *(*)(char *, struct svc_req *)) get_number_1_svc;
 		break;
 
 	case BAKERY_PROC:
 		_xdr_argument = (xdrproc_t) xdr_int;
 		_xdr_result = (xdrproc_t) xdr_BAKERY_RESULT;
-		local = (bool_t (*) (char *, void *,  struct svc_req *))bakery_proc_1_svc;
+		local = (char *(*)(char *, struct svc_req *)) bakery_proc_1_svc;
 		break;
 
 	default:
 		svcerr_noproc (transp);
 		return;
 	}
-	if (rqstp->rq_proc == GET_NUMBER)
-	{
-		thread_data_t *thread_data_ptr = (thread_data_t *)malloc(sizeof(thread_data_t));
-		if (thread_data_ptr == NULL)
-		{
-			perror("malloc");
-			exit(1);
-		}
-		thread_data_ptr->rqstp = rqstp;
-		thread_data_ptr->transp = transp;
-		if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) != 0)
-		{
-			perror("pthread_attr_setdetachstate");
-			free(thread_data_ptr);
-			exit(1);
-		}
-		if (pthread_create(&thread, &attr, get_number_worker, (void *)thread_data_ptr) != 0)
-		{
-			perror("pthread_create");
-			free(thread_data_ptr);
-			exit(1);
-		}
+	memset ((char *)&argument, 0, sizeof (argument));
+	if (!svc_getargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
+		svcerr_decode (transp);
+		return;
 	}
-	else
-	{
-		memset ((char *)&argument, 0, sizeof (argument));
-		if (!svc_getargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
-			svcerr_decode (transp);
-			return;
-		}
-		retval = (bool_t) (*local)((char *)&argument, (void *)&result, rqstp);
-		pthread_mutex_lock(&send_mutex);
-		if (retval > 0 && !svc_sendreply(transp, (xdrproc_t) _xdr_result, (char *)&result)) {
-			svcerr_systemerr (transp);
-		}
-		pthread_mutex_unlock(&send_mutex);
-		if (!svc_freeargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
-			fprintf (stderr, "%s", "unable to free arguments");
-			exit (1);
-		}
-		if (!bakery_prog_1_freeresult (transp, _xdr_result, (caddr_t) &result))
-			fprintf (stderr, "%s", "unable to free results");
+	result = (*local)((char *)&argument, rqstp);
+	if (result != NULL && !svc_sendreply(transp, (xdrproc_t) _xdr_result, result)) {
+		svcerr_systemerr (transp);
+	}
+	if (!svc_freeargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &argument)) {
+		fprintf (stderr, "%s", "unable to free arguments");
+		exit (1);
 	}
 	return;
 }

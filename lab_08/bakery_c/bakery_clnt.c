@@ -9,20 +9,32 @@
 /* Default timeout can be changed using clnt_control() */
 static struct timeval TIMEOUT = { 25, 0 };
 
-enum clnt_stat 
-get_number_1(void *argp, int *clnt_res, CLIENT *clnt)
+int *
+get_number_1(void *argp, CLIENT *clnt)
 {
-	return (clnt_call(clnt, GET_NUMBER,
+	static int clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, GET_NUMBER,
 		(xdrproc_t) xdr_void, (caddr_t) argp,
-		(xdrproc_t) xdr_int, (caddr_t) clnt_res,
-		TIMEOUT));
+		(xdrproc_t) xdr_int, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
 }
 
-enum clnt_stat 
-bakery_proc_1(int *argp, struct BAKERY_RESULT *clnt_res, CLIENT *clnt)
+struct BAKERY_RESULT *
+bakery_proc_1(int *argp, CLIENT *clnt)
 {
-	return (clnt_call(clnt, BAKERY_PROC,
+	static struct BAKERY_RESULT clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, BAKERY_PROC,
 		(xdrproc_t) xdr_int, (caddr_t) argp,
-		(xdrproc_t) xdr_BAKERY_RESULT, (caddr_t) clnt_res,
-		TIMEOUT));
+		(xdrproc_t) xdr_BAKERY_RESULT, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
 }

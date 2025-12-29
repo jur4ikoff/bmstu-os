@@ -49,6 +49,8 @@ bakery_prog_1(char *host)
 	//printf("AFTER NUMBER");
 	bakery_proc_1_arg = result_1;
 	result_2.is_recieved_time = 0;
+	srand((unsigned int)time(NULL));
+
 	while (result_2.is_recieved_time == 0)//&&flag
 	{
 		//printf("REQUEST");
@@ -61,9 +63,12 @@ bakery_prog_1(char *host)
 		{
 			printf("%ld %d\n", result_2.time, bakery_proc_1_arg);
 		}
-		//usleep(100);
-	}
-	//usleep(100);
+		else
+		{
+			usleep(100);
+			printf("waiting\n");
+		}
+		}
 #ifndef	DEBUG
 	clnt_destroy (clnt);
 #endif	 /* DEBUG */

@@ -6,10 +6,8 @@
 #ifndef _BAKERY_H_RPCGEN
 #define _BAKERY_H_RPCGEN
 
-#include <time.h>
 #include <rpc/rpc.h>
 
-#include <pthread.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,8 +16,8 @@ extern "C" {
 #define CLIENT_COUNT 6
 
 struct BAKERY_RESULT {
-	long time;
 	int is_recieved_time;
+	long time;
 };
 typedef struct BAKERY_RESULT BAKERY_RESULT;
 
@@ -28,20 +26,20 @@ typedef struct BAKERY_RESULT BAKERY_RESULT;
 
 #if defined(__STDC__) || defined(__cplusplus)
 #define GET_NUMBER 1
-extern  enum clnt_stat get_number_1(void *, int *, CLIENT *);
-extern  bool_t get_number_1_svc(void *, int *, struct svc_req *);
+extern  int * get_number_1(void *, CLIENT *);
+extern  int * get_number_1_svc(void *, struct svc_req *);
 #define BAKERY_PROC 2
-extern  enum clnt_stat bakery_proc_1(int *, struct BAKERY_RESULT *, CLIENT *);
-extern  bool_t bakery_proc_1_svc(int *, struct BAKERY_RESULT *, struct svc_req *);
+extern  struct BAKERY_RESULT * bakery_proc_1(int *, CLIENT *);
+extern  struct BAKERY_RESULT * bakery_proc_1_svc(int *, struct svc_req *);
 extern int bakery_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
 #define GET_NUMBER 1
-extern  enum clnt_stat get_number_1();
-extern  bool_t get_number_1_svc();
+extern  int * get_number_1();
+extern  int * get_number_1_svc();
 #define BAKERY_PROC 2
-extern  enum clnt_stat bakery_proc_1();
-extern  bool_t bakery_proc_1_svc();
+extern  struct BAKERY_RESULT * bakery_proc_1();
+extern  struct BAKERY_RESULT * bakery_proc_1_svc();
 extern int bakery_prog_1_freeresult ();
 #endif /* K&R C */
 

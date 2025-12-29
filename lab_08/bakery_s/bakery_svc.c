@@ -20,8 +20,7 @@ static void
 bakery_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
 	union {
-		int get_ticket_number_1_arg;
-		int get_service_time_1_arg;
+		int bakery_service_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -32,16 +31,16 @@ bakery_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		(void) svc_sendreply (transp, (xdrproc_t) xdr_void, (char *)NULL);
 		return;
 
-	case GET_TICKET_NUMBER:
-		_xdr_argument = (xdrproc_t) xdr_int;
+	case GET_NUMBER:
+		_xdr_argument = (xdrproc_t) xdr_void;
 		_xdr_result = (xdrproc_t) xdr_int;
 		local = (char *(*)(char *, struct svc_req *)) get_number_1_svc;
 		break;
 
-	case GET_SERVICE_TIME:
+	case BAKERY_SERVICE:
 		_xdr_argument = (xdrproc_t) xdr_int;
-		_xdr_result = (xdrproc_t) xdr_quad_t;
-		local = (char *(*)(char *, struct svc_req *)) get_service_time_1_svc;
+		_xdr_result = (xdrproc_t) xdr_int;
+		local = (char *(*)(char *, struct svc_req *)) bakery_service_1_svc;
 		break;
 
 	default:
