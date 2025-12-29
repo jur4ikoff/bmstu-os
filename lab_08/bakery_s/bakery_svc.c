@@ -39,7 +39,7 @@ bakery_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 
 	case BAKERY_SERVICE:
 		_xdr_argument = (xdrproc_t) xdr_int;
-		_xdr_result = (xdrproc_t) xdr_int;
+		_xdr_result = (xdrproc_t) xdr_quad_t;
 		local = (char *(*)(char *, struct svc_req *)) bakery_service_1_svc;
 		break;
 

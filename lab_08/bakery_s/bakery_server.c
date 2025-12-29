@@ -30,10 +30,7 @@ void* find_max_number(void* ptr) {
 
 bool get_number_1_svc(struct svc_req* rqstp) {
     pthread_t tid;
-    struct svc_req* arg = malloc(sizeof(struct svc_req));
-    if (!arg)
-        return FALSE;
-    *arg = *rqstp;
+    struct svc_req *arg = rqstp;
     if (pthread_create(&tid, NULL, find_max_number, arg) == -1) {
         free(arg);
         return FALSE;
