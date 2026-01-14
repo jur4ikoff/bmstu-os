@@ -21,10 +21,10 @@ extern "C" {
 #define PROC_COUNT 8
 
 struct CALCULATOR {
-    int op;
-    float arg1;
-    float arg2;
-    float result;
+	int op;
+	float arg1;
+	float arg2;
+	float result;
 };
 typedef struct CALCULATOR CALCULATOR;
 

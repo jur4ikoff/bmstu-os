@@ -11,10 +11,10 @@ const PROC_COUNT = 8;
 
 struct CALCULATOR
 {
-    int op;
-    float arg1;
-    float arg2;
-    float result;
+    int op;        /* Операция: ADD, SUB, MUL, DIV */
+    float arg1;    /* Первый аргумент */
+    float arg2;    /* Второй аргумент */
+    float result;  /* Результат */
 };
 
 program CALCULATOR_PROG
