@@ -27,8 +27,6 @@ struct thread_data_t
 	SVCXPRT *transp;
 	argument_t argument;
 };
-
-
 typedef struct thread_data_t thread_data_t;
 pthread_attr_t attr;
 pthread_t thread;
@@ -99,7 +97,7 @@ calculator_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		return;
 	}
 	pthread_attr_init(&attr);
-	if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) != 0)
+	if (pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED) == -1)
 	{
 		perror("pthread_attr_setdetachstate");
 		svc_freeargs (transp, (xdrproc_t) _xdr_argument, (caddr_t) &thread_data_ptr->argument);

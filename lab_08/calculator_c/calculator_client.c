@@ -22,7 +22,7 @@ void sig_handler(int sig_num)
 }
 
 void
-calculator_prog_1(char *host)	я4
+calculator_prog_1(char *host)
 {
 	CLIENT *clnt;
 	enum clnt_stat retval_1;
@@ -40,8 +40,8 @@ calculator_prog_1(char *host)	я4
 #endif	/* DEBUG */
 
 	calculator_proc_1_arg.op = rand() % 4;
-	calculator_proc_1_arg.arg1 = rand() % 100;
-	calculator_proc_1_arg.arg2 = rand() % 100 + 1;
+	calculator_proc_1_arg.arg1 = rand() % 67;
+	calculator_proc_1_arg.arg2 = rand() % 69;
 
 	retval_1 = calculator_proc_1(&calculator_proc_1_arg, &result_1, clnt);
 	if (retval_1 != RPC_SUCCESS) {
@@ -66,7 +66,7 @@ calculator_prog_1(char *host)	я4
 			break;
 	}
 	printf("PID: %d. %f %c %f = %f\n", getpid(), calculator_proc_1_arg.arg1, sign, calculator_proc_1_arg.arg2, result_1.result);
-	usleep(100);
+	usleep(10000);
 
 #ifndef	DEBUG
 	clnt_destroy (clnt);

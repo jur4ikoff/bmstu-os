@@ -1,0 +1,4 @@
+/Users/ypopov2005/Programming/bmstu-os/bmstu-os/lab_08/mod_calculator/build/CMakeFiles/calculator_server.dir
+/Users/ypopov2005/Programming/bmstu-os/bmstu-os/lab_08/mod_calculator/build/CMakeFiles/calculator_client.dir
+/Users/ypopov2005/Programming/bmstu-os/bmstu-os/lab_08/mod_calculator/build/CMakeFiles/edit_cache.dir
+/Users/ypopov2005/Programming/bmstu-os/bmstu-os/lab_08/mod_calculator/build/CMakeFiles/rebuild_cache.dir

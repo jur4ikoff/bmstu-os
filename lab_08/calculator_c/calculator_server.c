@@ -9,7 +9,7 @@
 bool_t
 calculator_proc_1_svc(struct CALCULATOR *argp, struct CALCULATOR *result, struct svc_req *rqstp)
 {
-	bool_t retval;
+	bool_t retval = TRUE;
 
 	switch(argp->op)
 	{
