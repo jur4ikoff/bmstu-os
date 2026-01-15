@@ -6,9 +6,9 @@
 struct CALCULATOR
 {
     int op;        
-    float arg1;    
-    float arg2;    
-    float result; 
+    double arg1;    
+    double arg2;    
+    double result; 
 };
 
 program CALCULATOR_PROG

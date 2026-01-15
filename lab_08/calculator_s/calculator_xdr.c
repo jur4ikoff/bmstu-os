@@ -12,11 +12,11 @@ xdr_CALCULATOR (XDR *xdrs, CALCULATOR *objp)
 
 	 if (!xdr_int (xdrs, &objp->op))
 		 return FALSE;
-	 if (!xdr_float (xdrs, &objp->arg1))
+	 if (!xdr_double (xdrs, &objp->arg1))
 		 return FALSE;
-	 if (!xdr_float (xdrs, &objp->arg2))
+	 if (!xdr_double (xdrs, &objp->arg2))
 		 return FALSE;
-	 if (!xdr_float (xdrs, &objp->result))
+	 if (!xdr_double (xdrs, &objp->result))
 		 return FALSE;
 	return TRUE;
 }
