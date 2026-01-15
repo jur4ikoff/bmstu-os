@@ -3,12 +3,6 @@
  * function: Define constants, non-standard data types and the calling process in remote calls
  */
 
-const ADD = 0;
-const SUB = 1;
-const MUL = 2;
-const DIV = 3;
-const PROC_COUNT = 8;
-
 struct CALCULATOR
 {
     int op;        

@@ -1,0 +1,77 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-g",
+      "-I/usr/include/tirpc",
+      "-D_REENTRANT",
+      "-c",
+      "-o",
+      "calculator_clnt.o",
+      "calculator_clnt.c"
+    ],
+    "directory": "/home/zero/vuz/sem5/os/lab_07/calculator",
+    "file": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_clnt.c",
+    "output": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_clnt.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-g",
+      "-I/usr/include/tirpc",
+      "-D_REENTRANT",
+      "-c",
+      "-o",
+      "calculator_client.o",
+      "calculator_client.c"
+    ],
+    "directory": "/home/zero/vuz/sem5/os/lab_07/calculator",
+    "file": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_client.c",
+    "output": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_client.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-g",
+      "-I/usr/include/tirpc",
+      "-D_REENTRANT",
+      "-c",
+      "-o",
+      "calculator_xdr.o",
+      "calculator_xdr.c"
+    ],
+    "directory": "/home/zero/vuz/sem5/os/lab_07/calculator",
+    "file": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_xdr.c",
+    "output": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_xdr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-g",
+      "-I/usr/include/tirpc",
+      "-D_REENTRANT",
+      "-c",
+      "-o",
+      "calculator_svc.o",
+      "calculator_svc.c"
+    ],
+    "directory": "/home/zero/vuz/sem5/os/lab_07/calculator",
+    "file": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_svc.c",
+    "output": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_svc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-g",
+      "-I/usr/include/tirpc",
+      "-D_REENTRANT",
+      "-c",
+      "-o",
+      "calculator_server.o",
+      "calculator_server.c"
+    ],
+    "directory": "/home/zero/vuz/sem5/os/lab_07/calculator",
+    "file": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_server.c",
+    "output": "/home/zero/vuz/sem5/os/lab_07/calculator/calculator_server.o"
+  }
+]
