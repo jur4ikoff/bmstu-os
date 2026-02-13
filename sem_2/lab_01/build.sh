@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gcc -Wall -std=c99 -pthread -o lab_01 1.c
+gcc -std=c99 -pthread -o lab_01 1.c
