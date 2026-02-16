@@ -15,7 +15,6 @@ int main(void)
     pid_t child_pids[CHILDS_NUM], wait_child_pid;
     int sockets[2];
     char *strings[CHILDS_NUM + 1] = {"aaa", "bbbbbbbbbb", "ccccc", " "};
-    char *prmsg = "parent";
     char buf[32];
     if (socketpair(AF_UNIX, SOCK_STREAM, 0, sockets) < 0)
     {
