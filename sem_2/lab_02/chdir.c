@@ -17,7 +17,7 @@ int level = 0;
 #define FTW_D 2   /* каталог */
 #define FTW_DNR 3 /* каталог, который недоступен для чтения */
 #define FTW_NS 4  /* файл, информацию о котором невозможно получить с помощью stat */
-char *fullpath; /* полный путь к каждому из файлов */
+char *fullpath;   /* полный путь к каждому из файлов */
 size_t pathlen;
 
 #ifdef PATH_MAX
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
         printf("Использование: ftw <начальный_каталог>\n");
         exit(1);
     }
-    ret = myftw(argv[1], myfunc); /* выполняет всю работу */
+    ret = myftw(argv[1], myfunc);
     exit(ret);
 }
 
@@ -105,19 +105,28 @@ int dopath(Myfunc* func) {
             exit(1);
         }
     }
-    fullpath[n++] = '/';
-    fullpath[n] = 0;
     if ((dp = opendir(fullpath)) == NULL) /* каталог недоступен */
         return(func(fullpath, &statbuf, FTW_DNR));
+    if (chdir(fullpath) == -1) {
+        perror("chdir");
+        exit(1);
+    }
+    level += n;
     while (ret == 0 && (dirp = readdir(dp)) != NULL) {
         if (strcmp(dirp->d_name, ".") != 0 && strcmp(dirp->d_name, "..") != 0) {
-            strcpy(&fullpath[n], dirp->d_name); /* добавить имя после слеша */
+            strcpy(fullpath, dirp->d_name);
             ret = dopath(func);
         }
     }
-    fullpath[n-1] = 0; /* стереть часть строки от слеша и до конца */
-    if (closedir(dp) == -1)
-        printf("невозможно закрыть каталог %s", fullpath);
+    level -= n;
+    if (chdir("..") == -1) {
+        perror("chdir");
+        exit(1);
+    }
+    if (closedir(dp) == -1) {
+        perror("closedir");
+        exit(1);
+    }
     return(ret);
 }
 
