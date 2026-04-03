@@ -40,17 +40,6 @@ int main()
 
 		printf("Server RECIEVED from client_addr: %s \n", buf);
 
-        char send[14];
-        sprintf(send, "%s %d", buf, getpid());
-
-        if (sendto(sockfd, send, strlen(send) + 1, 0, &client_addr, sizeof(client_addr)) < 0)
-        {
-            perror("sendto");
-            return EXIT_FAILURE;
-        }
-
-		printf("Server SEND to client_addr: %s \n", send);
-
 		unlink(buf);
 	}
     close(sockfd);

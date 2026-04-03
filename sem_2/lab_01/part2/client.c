@@ -40,16 +40,6 @@ int main()
 
 	printf("Client SEND message: %d\n", getpid());
 
-	int bytes = recvfrom(sockfd, buf, sizeof(buf), 0, &server_addr, &serverlen);
-
-	if (bytes < 0)
-	{
-		perror("recvfrom");
-		exit(1);
-	}
-
-	printf("Client RECIEVED message from server_addr: %s \n", buf);
-
 	close(sockfd);
 	unlink(buf);
 
