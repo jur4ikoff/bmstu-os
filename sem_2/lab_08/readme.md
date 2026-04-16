@@ -9,7 +9,7 @@ cat /etc/exports
 /etc/exports -- конфиг, где содержатся все шары
 
 ```bash
-sudo nfsd restart     
+sudo nfsd restart
 sudo showmount -e          
 # Exports list on localhost:
 # /Users/ypopov2005/Programming/bmstu-os/bmstu-os/sem_2/lab_08/shared_dir_server loopback
@@ -37,3 +37,4 @@ ifconfig
 # inet -- мой айпишник в сети, чтобы узнать, нужно последний октет напистаь вместо него 0 -- 192.168.50.0 Масска как правило 255.255.255.0
 ```
 В `/etc/exports` записать измененный айпишник
+
