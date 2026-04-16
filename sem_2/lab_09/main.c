@@ -5,7 +5,7 @@
 #include <linux/bitops.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Zhizhin Nikita");
+MODULE_AUTHOR("Yurii Popov");
 
 static char *format_binary(unsigned int flags)
 {

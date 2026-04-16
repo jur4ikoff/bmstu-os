@@ -1,0 +1,1 @@
+savedcmd_main.ko := ld -r -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-6.17.0-7-generic/scripts/module.lds -o main.ko main.o main.mod.o .module-common.o
