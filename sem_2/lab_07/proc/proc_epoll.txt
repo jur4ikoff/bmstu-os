@@ -1,135 +1,135 @@
-PID 40163 (epoll сервер)
+PID 8059 (epoll сервер)
 
-CWD (/proc/40163/cwd)
+CWD (/proc/8059/cwd)
 Текущая рабочая директория процесса
 
-/home/nik/Documents/BMSTU-OS/lab_17/epoll
+/home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll
 
-EXE (/proc/40163/exe)
+EXE (/proc/8059/exe)
 Исполняемый файл процесса
 
-/home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+/home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
 
-ROOT (/proc/40163/root)
+ROOT (/proc/8059/root)
 Корень файловой системы процесса (устанавливается chroot).
 
 /
 
-CMDLINE (/proc/40163/cmdline)
+CMDLINE (/proc/8059/cmdline)
 ./server 
 
-ENVIRON (/proc/40163/environ)
+ENVIRON (/proc/8059/environ)
 SHELL=/bin/bash
-SESSION_MANAGER=local/nik-pc:@/tmp/.ICE-unix/2465,unix/nik-pc:/tmp/.ICE-unix/2465
-WINDOWID=111149069
+SESSION_MANAGER=local/jur4ik-1-2:@/tmp/.ICE-unix/1810,unix/jur4ik-1-2:/tmp/.ICE-unix/1810
 QT_ACCESSIBILITY=1
-QT_SCREEN_SCALE_FACTORS=eDP=1;HDMI-A-0=1;
 COLORTERM=truecolor
-XDG_CONFIG_DIRS=/home/nik/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings
-XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
-ICEAUTHORITY=/run/user/1000/iceauth_kkjNtL
-LANGUAGE=en_US
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+XDG_MENU_PREFIX=gnome-
+TERM_PROGRAM_VERSION=1.95.3
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+LANGUAGE=en_US:en
 LC_ADDRESS=en_US.UTF-8
+GNOME_SHELL_SESSION_MODE=ubuntu
 LC_NAME=en_US.UTF-8
-SSH_AUTH_SOCK=/tmp/ssh-16GNnamADtwK/agent.2218
-SHELL_SESSION_ID=7088b21def544ba3a59a55453aeaf400
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
-DESKTOP_SESSION=plasma
+PYDEVD_DISABLE_FILE_VALIDATION=1
+XMODIFIERS=@im=ibus
+DESKTOP_SESSION=ubuntu
 LC_MONETARY=en_US.UTF-8
-SSH_AGENT_PID=2336
-GTK_RC_FILES=/etc/gtk/gtkrc:/home/nik/.gtkrc:/home/nik/.config/gtkrc
-XCURSOR_SIZE=24
-XDG_SEAT=seat0
-PWD=/home/nik/Documents/BMSTU-OS/lab_17/epoll
-LOGNAME=nik
-XDG_SESSION_DESKTOP=KDE
-XDG_SESSION_TYPE=x11
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-SYSTEMD_EXEC_PID=6419
-XAUTHORITY=/tmp/xauth_eLJViY
-GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/nik/.gtkrc-2.0:/home/nik/.config/gtkrc-2.0
-HOME=/home/nik
+NO_AT_BRIDGE=1
+GTK_MODULES=gail:atk-bridge
+PWD=/home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll
+LOGNAME=jur4ik
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SESSION_TYPE=wayland
+SYSTEMD_EXEC_PID=1905
+BUNDLED_DEBUGPY_PATH=/home/jur4ik/.vscode/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy
+XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.U5CZN3
+VSCODE_GIT_ASKPASS_NODE=/usr/share/code/code
+IM_CONFIG_CHECK_ENV=1
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+HOME=/home/jur4ik
+USERNAME=jur4ik
 IM_CONFIG_PHASE=1
-SSH_ASKPASS=/usr/bin/ksshaskpass
 LANG=en_US.UTF-8
-LC_PAPER=ru_RU.UTF-8
+LC_PAPER=en_US.UTF-8
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
-XDG_CURRENT_DESKTOP=KDE
-KONSOLE_DBUS_SERVICE=:1.919
-MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/plasma-dolphin.service/memory.pressure
-KONSOLE_DBUS_SESSION=/Sessions/1
-PROFILEHOME=
-XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
-INVOCATION_ID=ac6a5b1928e8441e9a37de3d0e6c45b5
-QTWEBENGINE_DICTIONARIES_PATH=/usr/share/hunspell-bdic/
-KONSOLE_VERSION=230805
-MANAGERPID=2177
-DOTNET_BUNDLE_EXTRACT_BASE_DIR=/home/nik/.cache/dotnet_bundle_extract
-KDE_SESSION_UID=1000
+XDG_CURRENT_DESKTOP=Unity
+MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
+PYTHONSTARTUP=/home/jur4ik/.config/Code/User/workspaceStorage/5f2e5d61edfe27252801dd4fba117d87/ms-python.python/pythonrc.py
+WAYLAND_DISPLAY=wayland-0
+GIT_ASKPASS=/usr/share/code/resources/app/extensions/git/dist/askpass.sh
+INVOCATION_ID=bd086133c19a4833b85135d154f7c669
+MANAGERPID=1509
+CHROME_DESKTOP=code.desktop
+GJS_DEBUG_OUTPUT=stderr
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+GNOME_SETUP_DISPLAY=:1
 LESSCLOSE=/usr/bin/lesspipe %s %s
 XDG_SESSION_CLASS=user
 LC_IDENTIFICATION=en_US.UTF-8
 TERM=xterm-256color
+PYTHON_BASIC_REPL=1
 LESSOPEN=| /usr/bin/lesspipe %s
-LIBVIRT_DEFAULT_URI=qemu:///system
-USER=nik
-COLORFGBG=15;0
-KDE_SESSION_VERSION=5
-PAM_KWALLET5_LOGIN=/run/user/1000/kwallet5.socket
+USER=jur4ik
+VSCODE_GIT_IPC_HANDLE=/run/user/1000/vscode-git-8a83222259.sock
+CLUTTER_DISABLE_MIPMAPPED_TEXT=1
 DISPLAY=:0
-SHLVL=2
+SHLVL=3
 GSM_SKIP_SSH_AGENT_WORKAROUND=true
 LC_TELEPHONE=en_US.UTF-8
-LC_MEASUREMENT=ru_RU.UTF-8
-XDG_VTNR=2
-XDG_SESSION_ID=3
-PAPERSIZE=a4
+QT_IM_MODULE=ibus
+LC_MEASUREMENT=en_US.UTF-8
+PAPERSIZE=letter
 XDG_RUNTIME_DIR=/run/user/1000
 DEBUGINFOD_URLS=https://debuginfod.ubuntu.com 
-LC_TIME=C
-QT_AUTO_SCREEN_SCALE_FACTOR=0
-JOURNAL_STREAM=8:39479
-XCURSOR_THEME=breeze_cursors
-XDG_DATA_DIRS=/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop
-KDE_FULL_SESSION=true
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/nik/.dotnet/tools
+LC_TIME=en_US.UTF-8
+VSCODE_GIT_ASKPASS_MAIN=/usr/share/code/resources/app/extensions/git/dist/askpass-main.js
+JOURNAL_STREAM=8:13962
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+GDK_BACKEND=x11
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jur4ik/.vscode/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts
+GDMSESSION=ubuntu
+ORIGINAL_XDG_CURRENT_DESKTOP=Unity
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-KDE_APPLICATIONS_AS_SCOPE=1
-LC_NUMERIC=C
-KONSOLE_DBUS_WINDOW=/Windows/1
+GIO_LAUNCHED_DESKTOP_FILE_PID=3128
+GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/code.desktop
+LC_NUMERIC=en_US.UTF-8
+OLDPWD=/home/jur4ik/Documents/bmstu-os/sem_2/lab_07
+TERM_PROGRAM=vscode
 _=/usr/bin/sleep
-OLDPWD=/home/nik/Documents/BMSTU-OS/lab_17
 
-STAT (/proc/40163/stat)
-  [ 1] pid                      40163
+STAT (/proc/8059/stat)
+  [ 1] pid                      8059
   [ 2] comm                     (server)
   [ 3] state                    S
        Sleeping
-  [ 4] ppid                     37408
-  [ 5] pgrp                     37408
-  [ 6] session                  25674
-  [ 7] tty_nr                   34820
-  [ 8] tpgid                    37408
+  [ 4] ppid                     5050
+  [ 5] pgrp                     5050
+  [ 6] session                  4312
+  [ 7] tty_nr                   34816
+  [ 8] tpgid                    5050
   [ 9] flags                    4194304
-  [10] minflt                   122
+  [10] minflt                   126
   [11] cminflt                  0
   [12] majflt                   0
   [13] cmajflt                  0
-  [14] utime                    1
-  [15] stime                    40
+  [14] utime                    0
+  [15] stime                    15
   [16] cutime                   0
   [17] cstime                   0
   [18] priority                 20
   [19] nice                     0
   [20] num_threads              1
   [21] itrealvalue              0
-  [22] starttime                938255
+  [22] starttime                185646
   [23] vsize                    2748416
   [24] rss                      320
   [25] rsslim                   18446744073709551615
-  [26] startcode                94023819571200
-  [27] endcode                  94023819574197
-  [28] startstack               140736733449952
+  [26] startcode                98095835152384
+  [27] endcode                  98095835155381
+  [28] startstack               140734534277856
   [29] kstkesp                  0
   [30] kstkeip                  0
   [31] signal                   0
@@ -140,85 +140,87 @@ STAT (/proc/40163/stat)
   [36] nswap                    0
   [37] cnswap                   0
   [38] exit_signal              17
-  [39] processor                8
+  [39] processor                1
   [40] rt_priority              0
   [41] policy                   0
   [42] delayacct_blkio_ticks    0
   [43] guest_time               0
   [44] cguest_time              0
-  [45] start_data               94023819582712
-  [46] end_data                 94023819583528
-  [47] start_brk                94024590483456
-  [48] arg_start                140736733457931
-  [49] arg_end                  140736733457940
-  [50] env_start                140736733457940
-  [51] env_end                  140736733462471
+  [45] start_data               98095835163896
+  [46] end_data                 98095835164712
+  [47] start_brk                98096862515200
+  [48] arg_start                140734534286618
+  [49] arg_end                  140734534286627
+  [50] env_start                140734534286627
+  [51] env_end                  140734534291390
   [52] exit_code                0
 
-FD (/proc/40163/fd/)
+FD (/proc/8059/fd/)
   fd 0    -> /dev/null
-  fd 1    -> /dev/pts/4
-  fd 2    -> /dev/pts/4
-  fd 3    -> socket:[579883]
-  fd 4    -> /home/nik/Documents/BMSTU-OS/lab_17/epoll/select_server.txt
+  fd 1    -> /dev/pts/0
+  fd 2    -> /dev/pts/0
+  fd 3    -> socket:[56796]
+  fd 4    -> /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/select_server.txt
   fd 5    -> anon_inode:[eventpoll]
-  fd 16   -> anon_inode:inotify
-  fd 17   -> anon_inode:inotify
+  fd 22   -> socket:[46370]
+  fd 43   -> /home/jur4ik/.config/Code/logs/20260416T221616/ptyhost.log
+  fd 103  -> /usr/share/code/v8_context_snapshot.bin
 
-MAPS (/proc/40163/maps)
-5583a05da000-5583a05db000 1      r--p 00000000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
-5583a05db000-5583a05dc000 1      r-xp 00001000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
-5583a05dc000-5583a05dd000 1      r--p 00002000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
-5583a05dd000-5583a05de000 1      r--p 00002000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
-5583a05de000-5583a05df000 1      rw-p 00003000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
-5583ce50e000-5583ce52f000 33     rw-p 00000000 00:00 0                          [heap]
-7c9487200000-7c9487228000 40     r--p 00000000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
-7c9487228000-7c94873b0000 392    r-xp 00028000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
-7c94873b0000-7c94873ff000 79     r--p 001b0000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
-7c94873ff000-7c9487403000 4      r--p 001fe000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
-7c9487403000-7c9487405000 2      rw-p 00202000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
-7c9487405000-7c9487412000 13     rw-p 00000000 00:00 0 
-7c948758e000-7c9487591000 3      rw-p 00000000 00:00 0 
-7c94875b3000-7c94875b5000 2      rw-p 00000000 00:00 0 
-7c94875b5000-7c94875b6000 1      r--p 00000000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-7c94875b6000-7c94875e1000 43     r-xp 00001000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-7c94875e1000-7c94875eb000 10     r--p 0002c000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-7c94875eb000-7c94875ed000 2      r--p 00036000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-7c94875ed000-7c94875ef000 2      rw-p 00038000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
-7fffd2ff2000-7fffd3014000 34     rw-p 00000000 00:00 0                          [stack]
-7fffd305f000-7fffd3063000 4      r--p 00000000 00:00 0                          [vvar]
-7fffd3063000-7fffd3065000 2      r-xp 00000000 00:00 0                          [vdso]
+MAPS (/proc/8059/maps)
+5937b7687000-5937b7688000 1      r--p 00000000 08:02 534592                     /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
+5937b7688000-5937b7689000 1      r-xp 00001000 08:02 534592                     /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
+5937b7689000-5937b768a000 1      r--p 00002000 08:02 534592                     /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
+5937b768a000-5937b768b000 1      r--p 00002000 08:02 534592                     /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
+5937b768b000-5937b768c000 1      rw-p 00003000 08:02 534592                     /home/jur4ik/Documents/bmstu-os/sem_2/lab_07/epoll/server
+5937f4a4d000-5937f4a6e000 33     rw-p 00000000 00:00 0                          [heap]
+702648200000-702648228000 40     r--p 00000000 08:02 1497825                    /usr/lib/x86_64-linux-gnu/libc.so.6
+702648228000-7026483b0000 392    r-xp 00028000 08:02 1497825                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7026483b0000-7026483ff000 79     r--p 001b0000 08:02 1497825                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7026483ff000-702648403000 4      r--p 001fe000 08:02 1497825                    /usr/lib/x86_64-linux-gnu/libc.so.6
+702648403000-702648405000 2      rw-p 00202000 08:02 1497825                    /usr/lib/x86_64-linux-gnu/libc.so.6
+702648405000-702648412000 13     rw-p 00000000 00:00 0 
+702648502000-702648505000 3      rw-p 00000000 00:00 0 
+702648519000-70264851b000 2      rw-p 00000000 00:00 0 
+70264851b000-70264851c000 1      r--p 00000000 08:02 1497819                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+70264851c000-702648547000 43     r-xp 00001000 08:02 1497819                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+702648547000-702648551000 10     r--p 0002c000 08:02 1497819                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+702648551000-702648553000 2      r--p 00036000 08:02 1497819                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+702648553000-702648555000 2      rw-p 00038000 08:02 1497819                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fff4fea7000-7fff4fec9000 34     rw-p 00000000 00:00 0                          [stack]
+7fff4fec9000-7fff4fecd000 4      r--p 00000000 00:00 0                          [vvar]
+7fff4fecd000-7fff4fecf000 2      r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 1      --xp 00000000 00:00 0                  [vsyscall]
 
 Итого страниц: 672, таблиц страниц: 2
 vsize по smaps:  2752512 байт (672 страниц)
 
-PAGEMAP (/proc/40163/pagemap)
+PAGEMAP (/proc/8059/pagemap)
   region                          total  present  swapped     file
-  5583a05da000-5583a05db000        1        1        0        1
-  5583a05db000-5583a05dc000        1        1        0        1
-  5583a05dc000-5583a05dd000        1        1        0        1
-  5583a05dd000-5583a05de000        1        1        0        0
-  5583a05de000-5583a05df000        1        1        0        0
-  5583ce50e000-5583ce52f000       33        2        0        0
-  7c9487200000-7c9487228000       40       39        0       39
-  7c9487228000-7c94873b0000      392      246        0      246
-  7c94873b0000-7c94873ff000       79       16        0       16
-  7c94873ff000-7c9487403000        4        4        0        0
-  7c9487403000-7c9487405000        2        2        0        0
-  7c9487405000-7c9487412000       13        5        0        0
-  7c948758e000-7c9487591000        3        2        0        0
-  7c94875b3000-7c94875b5000        2        1        0        0
-  7c94875b5000-7c94875b6000        1        1        0        1
-  7c94875b6000-7c94875e1000       43       42        0       42
-  7c94875e1000-7c94875eb000       10       10        0       10
-  7c94875eb000-7c94875ed000        2        2        0        0
-  7c94875ed000-7c94875ef000        2        2        0        0
-  7fffd2ff2000-7fffd3014000       34        5        0        0
-  7fffd305f000-7fffd3063000        4        0        0        0
-  7fffd3063000-7fffd3065000        2        1        0        1
+  5937b7687000-5937b7688000        1        1        0        1
+  5937b7688000-5937b7689000        1        1        0        1
+  5937b7689000-5937b768a000        1        1        0        1
+  5937b768a000-5937b768b000        1        1        0        0
+  5937b768b000-5937b768c000        1        1        0        0
+  5937f4a4d000-5937f4a6e000       33        2        0        0
+  702648200000-702648228000       40       39        0       39
+  702648228000-7026483b0000      392      238        0      238
+  7026483b0000-7026483ff000       79       16        0       16
+  7026483ff000-702648403000        4        4        0        0
+  702648403000-702648405000        2        2        0        0
+  702648405000-702648412000       13        5        0        0
+  702648502000-702648505000        3        2        0        0
+  702648519000-70264851b000        2        1        0        0
+  70264851b000-70264851c000        1        1        0        1
+  70264851c000-702648547000       43       43        0       43
+  702648547000-702648551000       10       10        0       10
+  702648551000-702648553000        2        2        0        0
+  702648553000-702648555000        2        2        0        0
+  7fff4fea7000-7fff4fec9000       34        4        0        0
+  7fff4fec9000-7fff4fecd000        4        0        0        0
+  7fff4fecd000-7fff4fecf000        2        1        0        1
   ffffffffff600000-ffffffffff601000        0        0        0        0
 
-IO (/proc/40163/io)
+IO (/proc/8059/io)
 rchar: 4092
 wchar: 90681
 syscr: 8
@@ -227,8 +229,8 @@ read_bytes: 0
 write_bytes: 20480
 cancelled_write_bytes: 0
 
-COMM (/proc/40163/comm)
+COMM (/proc/8059/comm)
 server
 
-TASK (/proc/40163/task/)
-  TID 40163  comm=server
+TASK (/proc/8059/task/)
+  TID 8059  comm=server
