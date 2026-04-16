@@ -1,0 +1,234 @@
+PID 40163 (epoll сервер)
+
+CWD (/proc/40163/cwd)
+Текущая рабочая директория процесса
+
+/home/nik/Documents/BMSTU-OS/lab_17/epoll
+
+EXE (/proc/40163/exe)
+Исполняемый файл процесса
+
+/home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+
+ROOT (/proc/40163/root)
+Корень файловой системы процесса (устанавливается chroot).
+
+/
+
+CMDLINE (/proc/40163/cmdline)
+./server 
+
+ENVIRON (/proc/40163/environ)
+SHELL=/bin/bash
+SESSION_MANAGER=local/nik-pc:@/tmp/.ICE-unix/2465,unix/nik-pc:/tmp/.ICE-unix/2465
+WINDOWID=111149069
+QT_ACCESSIBILITY=1
+QT_SCREEN_SCALE_FACTORS=eDP=1;HDMI-A-0=1;
+COLORTERM=truecolor
+XDG_CONFIG_DIRS=/home/nik/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+ICEAUTHORITY=/run/user/1000/iceauth_kkjNtL
+LANGUAGE=en_US
+LC_ADDRESS=en_US.UTF-8
+LC_NAME=en_US.UTF-8
+SSH_AUTH_SOCK=/tmp/ssh-16GNnamADtwK/agent.2218
+SHELL_SESSION_ID=7088b21def544ba3a59a55453aeaf400
+MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+DESKTOP_SESSION=plasma
+LC_MONETARY=en_US.UTF-8
+SSH_AGENT_PID=2336
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/nik/.gtkrc:/home/nik/.config/gtkrc
+XCURSOR_SIZE=24
+XDG_SEAT=seat0
+PWD=/home/nik/Documents/BMSTU-OS/lab_17/epoll
+LOGNAME=nik
+XDG_SESSION_DESKTOP=KDE
+XDG_SESSION_TYPE=x11
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+SYSTEMD_EXEC_PID=6419
+XAUTHORITY=/tmp/xauth_eLJViY
+GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/nik/.gtkrc-2.0:/home/nik/.config/gtkrc-2.0
+HOME=/home/nik
+IM_CONFIG_PHASE=1
+SSH_ASKPASS=/usr/bin/ksshaskpass
+LANG=en_US.UTF-8
+LC_PAPER=ru_RU.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+XDG_CURRENT_DESKTOP=KDE
+KONSOLE_DBUS_SERVICE=:1.919
+MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/background.slice/plasma-dolphin.service/memory.pressure
+KONSOLE_DBUS_SESSION=/Sessions/1
+PROFILEHOME=
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+INVOCATION_ID=ac6a5b1928e8441e9a37de3d0e6c45b5
+QTWEBENGINE_DICTIONARIES_PATH=/usr/share/hunspell-bdic/
+KONSOLE_VERSION=230805
+MANAGERPID=2177
+DOTNET_BUNDLE_EXTRACT_BASE_DIR=/home/nik/.cache/dotnet_bundle_extract
+KDE_SESSION_UID=1000
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XDG_SESSION_CLASS=user
+LC_IDENTIFICATION=en_US.UTF-8
+TERM=xterm-256color
+LESSOPEN=| /usr/bin/lesspipe %s
+LIBVIRT_DEFAULT_URI=qemu:///system
+USER=nik
+COLORFGBG=15;0
+KDE_SESSION_VERSION=5
+PAM_KWALLET5_LOGIN=/run/user/1000/kwallet5.socket
+DISPLAY=:0
+SHLVL=2
+GSM_SKIP_SSH_AGENT_WORKAROUND=true
+LC_TELEPHONE=en_US.UTF-8
+LC_MEASUREMENT=ru_RU.UTF-8
+XDG_VTNR=2
+XDG_SESSION_ID=3
+PAPERSIZE=a4
+XDG_RUNTIME_DIR=/run/user/1000
+DEBUGINFOD_URLS=https://debuginfod.ubuntu.com 
+LC_TIME=C
+QT_AUTO_SCREEN_SCALE_FACTOR=0
+JOURNAL_STREAM=8:39479
+XCURSOR_THEME=breeze_cursors
+XDG_DATA_DIRS=/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+KDE_FULL_SESSION=true
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/nik/.dotnet/tools
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+KDE_APPLICATIONS_AS_SCOPE=1
+LC_NUMERIC=C
+KONSOLE_DBUS_WINDOW=/Windows/1
+_=/usr/bin/sleep
+OLDPWD=/home/nik/Documents/BMSTU-OS/lab_17
+
+STAT (/proc/40163/stat)
+  [ 1] pid                      40163
+  [ 2] comm                     (server)
+  [ 3] state                    S
+       Sleeping
+  [ 4] ppid                     37408
+  [ 5] pgrp                     37408
+  [ 6] session                  25674
+  [ 7] tty_nr                   34820
+  [ 8] tpgid                    37408
+  [ 9] flags                    4194304
+  [10] minflt                   122
+  [11] cminflt                  0
+  [12] majflt                   0
+  [13] cmajflt                  0
+  [14] utime                    1
+  [15] stime                    40
+  [16] cutime                   0
+  [17] cstime                   0
+  [18] priority                 20
+  [19] nice                     0
+  [20] num_threads              1
+  [21] itrealvalue              0
+  [22] starttime                938255
+  [23] vsize                    2748416
+  [24] rss                      320
+  [25] rsslim                   18446744073709551615
+  [26] startcode                94023819571200
+  [27] endcode                  94023819574197
+  [28] startstack               140736733449952
+  [29] kstkesp                  0
+  [30] kstkeip                  0
+  [31] signal                   0
+  [32] blocked                  0
+  [33] sigignore                0
+  [34] sigcatch                 2
+  [35] wchan                    1
+  [36] nswap                    0
+  [37] cnswap                   0
+  [38] exit_signal              17
+  [39] processor                8
+  [40] rt_priority              0
+  [41] policy                   0
+  [42] delayacct_blkio_ticks    0
+  [43] guest_time               0
+  [44] cguest_time              0
+  [45] start_data               94023819582712
+  [46] end_data                 94023819583528
+  [47] start_brk                94024590483456
+  [48] arg_start                140736733457931
+  [49] arg_end                  140736733457940
+  [50] env_start                140736733457940
+  [51] env_end                  140736733462471
+  [52] exit_code                0
+
+FD (/proc/40163/fd/)
+  fd 0    -> /dev/null
+  fd 1    -> /dev/pts/4
+  fd 2    -> /dev/pts/4
+  fd 3    -> socket:[579883]
+  fd 4    -> /home/nik/Documents/BMSTU-OS/lab_17/epoll/select_server.txt
+  fd 5    -> anon_inode:[eventpoll]
+  fd 16   -> anon_inode:inotify
+  fd 17   -> anon_inode:inotify
+
+MAPS (/proc/40163/maps)
+5583a05da000-5583a05db000 1      r--p 00000000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+5583a05db000-5583a05dc000 1      r-xp 00001000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+5583a05dc000-5583a05dd000 1      r--p 00002000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+5583a05dd000-5583a05de000 1      r--p 00002000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+5583a05de000-5583a05df000 1      rw-p 00003000 103:02 30413513                  /home/nik/Documents/BMSTU-OS/lab_17/epoll/server
+5583ce50e000-5583ce52f000 33     rw-p 00000000 00:00 0                          [heap]
+7c9487200000-7c9487228000 40     r--p 00000000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7c9487228000-7c94873b0000 392    r-xp 00028000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7c94873b0000-7c94873ff000 79     r--p 001b0000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7c94873ff000-7c9487403000 4      r--p 001fe000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7c9487403000-7c9487405000 2      rw-p 00202000 103:02 5648742                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7c9487405000-7c9487412000 13     rw-p 00000000 00:00 0 
+7c948758e000-7c9487591000 3      rw-p 00000000 00:00 0 
+7c94875b3000-7c94875b5000 2      rw-p 00000000 00:00 0 
+7c94875b5000-7c94875b6000 1      r--p 00000000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7c94875b6000-7c94875e1000 43     r-xp 00001000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7c94875e1000-7c94875eb000 10     r--p 0002c000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7c94875eb000-7c94875ed000 2      r--p 00036000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7c94875ed000-7c94875ef000 2      rw-p 00038000 103:02 5648739                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fffd2ff2000-7fffd3014000 34     rw-p 00000000 00:00 0                          [stack]
+7fffd305f000-7fffd3063000 4      r--p 00000000 00:00 0                          [vvar]
+7fffd3063000-7fffd3065000 2      r-xp 00000000 00:00 0                          [vdso]
+
+Итого страниц: 672, таблиц страниц: 2
+vsize по smaps:  2752512 байт (672 страниц)
+
+PAGEMAP (/proc/40163/pagemap)
+  region                          total  present  swapped     file
+  5583a05da000-5583a05db000        1        1        0        1
+  5583a05db000-5583a05dc000        1        1        0        1
+  5583a05dc000-5583a05dd000        1        1        0        1
+  5583a05dd000-5583a05de000        1        1        0        0
+  5583a05de000-5583a05df000        1        1        0        0
+  5583ce50e000-5583ce52f000       33        2        0        0
+  7c9487200000-7c9487228000       40       39        0       39
+  7c9487228000-7c94873b0000      392      246        0      246
+  7c94873b0000-7c94873ff000       79       16        0       16
+  7c94873ff000-7c9487403000        4        4        0        0
+  7c9487403000-7c9487405000        2        2        0        0
+  7c9487405000-7c9487412000       13        5        0        0
+  7c948758e000-7c9487591000        3        2        0        0
+  7c94875b3000-7c94875b5000        2        1        0        0
+  7c94875b5000-7c94875b6000        1        1        0        1
+  7c94875b6000-7c94875e1000       43       42        0       42
+  7c94875e1000-7c94875eb000       10       10        0       10
+  7c94875eb000-7c94875ed000        2        2        0        0
+  7c94875ed000-7c94875ef000        2        2        0        0
+  7fffd2ff2000-7fffd3014000       34        5        0        0
+  7fffd305f000-7fffd3063000        4        0        0        0
+  7fffd3063000-7fffd3065000        2        1        0        1
+  ffffffffff600000-ffffffffff601000        0        0        0        0
+
+IO (/proc/40163/io)
+rchar: 4092
+wchar: 90681
+syscr: 8
+syscw: 4008
+read_bytes: 0
+write_bytes: 20480
+cancelled_write_bytes: 0
+
+COMM (/proc/40163/comm)
+server
+
+TASK (/proc/40163/task/)
+  TID 40163  comm=server
