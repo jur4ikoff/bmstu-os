@@ -8,8 +8,8 @@ sudo rmmod main.ko    unload module from kernel
 ## Объяснение кода
 
 ## Загадки
-### 
-Берет рандомный процесс и смотрит на `state` и `flags`, нужно расшифровать. 
+### Определить информацию о рандомном процессе по state и flags
+Определить информацию о рандомном процессе по `state` и `flags`, нужно расшифровать. 
 - [state docs](https://elixir.bootlin.com/linux/v7.0/source/include/linux/sched.h#L107)
 - [flags docs](https://elixir.bootlin.com/linux/v7.0/source/include/linux/sched.h#L1752)
 
