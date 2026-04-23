@@ -21,7 +21,7 @@ static char *format_binary(unsigned int flags)
 static void print_task(struct task_struct *task)
 {
     printk(
-        KERN_INFO "comm=%s, pid=%d, ppid_comm=%s, ppid=%d, tgid=%d, state=0x%x, flags=0x%x(%s), on_cpu=%d, prio=%d, policy=%u, exit_state=%d, utime=%llu, stime=%llu, last_switch_count=%lu, last_switch_time=%lu, sessionid=%u\n",
+        KERN_INFO "comm=%s, pid=%d, parent_comm=%s, ppid=%d, tgid=%d, state=0x%x, flags=0x%x, on_cpu=%d, prio=%d, policy=%u, exit_state=%d, utime=%llu, stime=%llu, last_switch_count=%lu, last_switch_time=%lu, sessionid=%u\n",
         task->comm,
         task->pid,
         task->parent->comm,
@@ -29,7 +29,6 @@ static void print_task(struct task_struct *task)
         task->tgid,
         task->__state,
         task->flags,
-        format_binary(task->flags),
         task->on_cpu,
         task->prio,
         task->policy,

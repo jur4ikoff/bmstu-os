@@ -19,7 +19,6 @@ __section(".gnu.linkonce.this_module") = {
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0xe8213e80, "_printk" },
-	{ 0x90a48d82, "__ubsan_handle_out_of_bounds" },
 	{ 0xeac092aa, "init_task" },
 	{ 0xdc1bea0d, "module_layout" },
 };
@@ -27,14 +26,12 @@ __used __section("__versions") = {
 static const u32 ____version_ext_crcs[]
 __used __section("__version_ext_crcs") = {
 	0xe8213e80,
-	0x90a48d82,
 	0xeac092aa,
 	0xdc1bea0d,
 };
 static const char ____version_ext_names[]
 __used __section("__version_ext_names") =
 	"_printk\0"
-	"__ubsan_handle_out_of_bounds\0"
 	"init_task\0"
 	"module_layout\0"
 ;
@@ -42,4 +39,4 @@ __used __section("__version_ext_names") =
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "A2051C0E54C9E781FD049BB");
+MODULE_INFO(srcversion, "720D88D1DB09400A892F326");
