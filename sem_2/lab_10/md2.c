@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include "md.h"
 MODULE_LICENSE( "GPL" );
-MODULE_AUTHOR( "Zharinov" );
+MODULE_AUTHOR( "Popov" );
 
 static int __init md_init(void) {
    printk( "+ module md2 start!\n" );

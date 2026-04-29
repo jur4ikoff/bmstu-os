@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include "md.h"
 MODULE_LICENSE( "GPL" );
-MODULE_AUTHOR( "Zharinov" );
+MODULE_AUTHOR( "Popov" );
 
 char* md1_data = "Привет мир!";
 extern char* md1_proc(void) {
