@@ -16,12 +16,12 @@ static unsigned int write_index = 0;
 static unsigned int read_index = 0;
 
 static int fortune_open(struct inode *inode, struct file *file) {
-  printk(KERN_INFO "fortune: open\n");
+  printk(KERN_INFO "fortune: open");
   return 0;
 }
 
 static int fortune_release(struct inode *inode, struct file *file) {
-  printk(KERN_INFO "fortune: release\n");
+  printk(KERN_INFO "fortune: release");
   return 0;
 }
 
@@ -86,7 +86,7 @@ static int __init fortune_init(void) {
     vfree(cookie_pot);
     return -ENOMEM;
   }
-  printk(KERN_INFO "fortune: module loaded\n");
+  printk(KERN_INFO "fortune: module loaded");
   return 0;
 }
 
@@ -95,7 +95,7 @@ static void __exit fortune_exit(void) {
   proc_remove(proc_dir);
   proc_remove(proc_file);
   vfree(cookie_pot);
-  printk(KERN_INFO "fortune: module unloaded\n");
+  printk(KERN_INFO "fortune: module unloaded");
 }
 
 module_init(fortune_init);
