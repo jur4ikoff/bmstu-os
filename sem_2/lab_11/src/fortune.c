@@ -14,7 +14,7 @@
 #define COOKIE_BUF_SIZE PAGE_SIZE
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Zhizhin Nikita");
+MODULE_AUTHOR("Popov Yurii");
 
 static char *cookie_buf;
 
