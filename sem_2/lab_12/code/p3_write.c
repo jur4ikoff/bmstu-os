@@ -11,7 +11,7 @@ int main()
   int fd2 = open("q.txt",O_RDWR);
   stat("q.txt", &statbuf);
   printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
-
+  
   for(char c = 'a'; c <= 'z'; c++)
   {
   	if (c%2)
