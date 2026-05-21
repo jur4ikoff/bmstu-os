@@ -6,7 +6,6 @@ sudo insmod main.ko   load module into kernel
 sudo rmmod main.ko    unload module from kernel
 
 ## Объяснение кода
-
 ## Загадки
 ### Определить информацию о рандомном процессе по state и flags
 Определить информацию о рандомном процессе по `state` и `flags`, нужно расшифровать. 
