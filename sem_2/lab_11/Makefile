@@ -1,9 +1,14 @@
-obj-m += main.o
+CURRENT = $(shell uname -r)
+KDIR = /lib/modules/$(CURRENT)/build
+PWD = $(shell pwd)
 
-KDIR := /lib/modules/$(shell uname -r)/build
+TARGET = fortune
 
-all:
+obj-m := src/$(TARGET).o
+ccflags-y += -I$(M)/inc
+
+default:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
-clean:
+clean: 
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
