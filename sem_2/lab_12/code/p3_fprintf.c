@@ -1,0 +1,28 @@
+#include <fcntl.h>
+#include <stdio.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+int main() 
+{
+  struct stat statbuf;
+  FILE *fs1 = fopen("q.txt", "w");
+  FILE *fs2 = fopen("q.txt", "w");
+  stat("q.txt", &statbuf);
+  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+
+  for(char c = 'a'; c <= 'z'; c++)
+  {
+  	if (c%2)
+      fprintf(fs1, "%c", c);
+  	else
+		  fprintf(fs2, "%c", c);
+  }
+  stat("q.txt", &statbuf);
+  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  fclose(fs2);
+  fclose(fs1);
+  stat("q.txt", &statbuf);
+  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  return 0;
+}
