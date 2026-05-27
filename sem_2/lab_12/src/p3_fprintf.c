@@ -9,7 +9,7 @@ int main()
   FILE *fs1 = fopen("q.txt", "w");
   FILE *fs2 = fopen("q.txt", "w");
   stat("q.txt", &statbuf);
-  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  printf("inode: %lu;size: %ld; blksize: %d\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
 
   for(char c = 'a'; c <= 'z'; c++)
   {
@@ -19,10 +19,10 @@ int main()
 		  fprintf(fs2, "%c", c);
   }
   stat("q.txt", &statbuf);
-  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  printf("inode: %lu;size: %ld; blksize: %d\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
   fclose(fs2);
   fclose(fs1);
   stat("q.txt", &statbuf);
-  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  printf("inode: %lu;size: %ld; blksize: %d\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
   return 0;
 }

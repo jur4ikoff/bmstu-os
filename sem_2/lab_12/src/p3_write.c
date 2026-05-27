@@ -10,7 +10,7 @@ int main()
   int fd1 = open("q.txt", O_RDWR);
   int fd2 = open("q.txt", O_RDWR);
   stat("q.txt", &statbuf);
-  printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+  printf("inode: %lu;size: %ld; blksize: %d\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
 
   for(char c = 'a'; c <= 'z'; c++)
   {
@@ -19,7 +19,7 @@ int main()
   	else
 		  write(fd2, &c, 1);
     stat("q.txt", &statbuf);
-    printf("inode: %lu;size: %ld; blksize: %ld\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
+    printf("inode: %lu;size: %ld; blksize: %d\n", statbuf.st_ino, statbuf.st_size, statbuf.st_blksize);
   }
   close(fd1);
   close(fd2);
