@@ -24,8 +24,8 @@ int main()
   char c;
   int fl = 1;
   
-  int fd1 = open("alphabet.txt",O_RDONLY);
-  int fd2 = open("alphabet.txt",O_RDONLY);
+  int fd1 = open("alphabet.txt", O_RDONLY);
+  int fd2 = open("alphabet.txt", O_RDONLY);
 
   if (pthread_create(&t, NULL, thread_func, &fd1) != 0)
   {
@@ -35,8 +35,8 @@ int main()
   
   while (fl == 1)
   {
-    if ((fl = read(fd2,&c,1)) == 1)
-      write(1,&c,1);
+    if ((fl = read(fd2, &c, 1)) == 1)
+      write(1, &c, 1);
   }
   pthread_join(t, NULL);
   return 0;

@@ -22,8 +22,8 @@ int main()
 {
   pthread_t t1, t2;
   
-  int fd1 = open("alphabet.txt",O_RDONLY);
-  int fd2 = open("alphabet.txt",O_RDONLY);
+  int fd1 = open("alphabet.txt", O_RDONLY);
+  int fd2 = open("alphabet.txt", O_RDONLY);
 
   if (pthread_create(&t1, NULL, thread_func, &fd1) != 0)
   {
