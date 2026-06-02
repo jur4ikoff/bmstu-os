@@ -8,7 +8,7 @@
 #include <linux/slab.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Gribov Andrew");
+MODULE_AUTHOR("Popov");
 
 #define MYFS_MAGIC_NUMBER 0x13131313
 #define SLAB_NAME "myfs_cache"
