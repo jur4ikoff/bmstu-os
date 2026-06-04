@@ -97,15 +97,16 @@ static struct file_system_type myfs_type = {
 static int __init myfs_init(void)
 {
     int ret;
+    printk("myfs: call insmod\n");
 
-    printk(KERN_INFO "myfs: register_filesystem call\n");
+   
     ret = register_filesystem(&myfs_type);
     if (ret)
     {
         printk(KERN_ERR "myfs: register_filesystem error\n");
         return ret;
     }
-    printk(KERN_INFO "myfs: register_filesystem\n");
+    printk(KERN_INFO "myfs: register_filesystem call\n");
 
     if ((cache_mem_area = (void **)kmalloc(sizeof(void *), GFP_KERNEL)) == NULL)
     {
@@ -143,6 +144,7 @@ static int __init myfs_init(void)
 static void __exit myfs_exit(void)
 {
     int ret;
+    printk("myfs: call insmod\n");
 
     kmem_cache_free(cache, *cache_mem_area);
     printk("myfs: kmem_cache_free\n");
