@@ -9,6 +9,7 @@
 #include <asm/io.h>
 
 MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Popov");
 
 #define IRQ_NUM 1
 #define PROC_NAME "irq_tasklet"
