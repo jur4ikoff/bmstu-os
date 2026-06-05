@@ -11,7 +11,7 @@
 #include <linux/input.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("yaroslavd");
+MODULE_AUTHOR("Popov");
 
 #define DIR_NAME "key_buf_wq"
 
@@ -65,7 +65,7 @@ void work1_func(struct work_struct *work)
     last_key_name[sizeof(last_key_name) - 1] = '\0';
     spin_unlock(&data_lock);
 
-    printk(KERN_INFO "+ [WQ1] Key: %s Code: %d Execution time: %lld ns\n", 
+    printk(KERN_INFO "+ [WQ1] Key: %s Code: %d time: %lld ns\n", 
            last_key_name, last_key_code, diff_ns);
     printk(KERN_INFO "+ [WQ1] End\n");
 }
@@ -73,6 +73,8 @@ void work1_func(struct work_struct *work)
 void work2_func(struct work_struct *work)
 {
     struct my_work_struct *mw = container_of(work, struct my_work_struct, work);
+    ktime_t end_time;
+    s64 diff_ns;
     const char *kname = "Unknown";
 
     printk(KERN_INFO "+ [WQ2] Begin processing\n");
@@ -82,6 +84,9 @@ void work2_func(struct work_struct *work)
     if (mw->code < ARRAY_SIZE(ascii)) {
         kname = ascii[mw->code];
     }
+    
+    end_time = ktime_get();
+    diff_ns = ktime_to_ns(ktime_sub(end_time, mw->start_time));
 
     spin_lock(&data_lock);
     last_key_code = mw->code;
@@ -89,7 +94,9 @@ void work2_func(struct work_struct *work)
     last_key_name[sizeof(last_key_name) - 1] = '\0';
     spin_unlock(&data_lock);
 
-    printk(KERN_INFO "+ [WQ2] Key: %s Code: %d\n", last_key_name, last_key_code);
+    // printk(KERN_INFO "+ [WQ2] Key: %s Code: %d\n", last_key_name, last_key_code);
+    printk(KERN_INFO "+ [WQ2] Key: %s Code: %d time: %lld ns\n", 
+        last_key_name, last_key_code, diff_ns);
     printk(KERN_INFO "+ [WQ2] End\n");
 }
 

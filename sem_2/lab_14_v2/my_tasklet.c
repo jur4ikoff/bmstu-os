@@ -11,7 +11,7 @@
 #include "key.h"
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("yaroslavd");
+MODULE_AUTHOR("Popov");
 
 #define DIR_NAME "key_buf_tasklet"
 
