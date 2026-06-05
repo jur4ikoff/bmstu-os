@@ -71,7 +71,7 @@ int main(int argc, char **argv) {
         else
             consume(sockfd);
         close(sockfd);
-        usleep(rand() % 2500);
+        usleep(rand() % 4000);
     }
     exit(0);
 }
