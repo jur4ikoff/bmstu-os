@@ -108,11 +108,9 @@ void consumer(int connfd, char *buffer, char *letter, int *cons_ind, int semfd) 
     }
 }
 
-void* process_client(int connfd, char *buffer, char *letter, int *prod_ind, int *cons_ind, FILE *logfile, int semfd) {
+void* process_client(int connfd, char *buffer, char *letter, int *prod_ind, int *cons_ind, int semfd) {
     char buf[10];
-    struct timespec start, end;
     printf("Connected\n");
-    clock_gettime(CLOCK_REALTIME, &start);
     if (recv(connfd, buf, sizeof(buf), 0) == -1) {
         perror("recv");
         exit(1);
@@ -124,8 +122,6 @@ void* process_client(int connfd, char *buffer, char *letter, int *prod_ind, int 
     else
         printf("Unknown request: %c\n", buf[0]);
     close(connfd);
-    clock_gettime(CLOCK_REALTIME, &end);
-    fprintf(logfile, "%ld\n", end.tv_nsec - start.tv_nsec);
     return NULL;
 }
 
@@ -140,7 +136,6 @@ int main(void) {
     int connfd, listenfd;
     socklen_t clilen;
     struct sockaddr_in cliaddr, servaddr = { 0 };
-    FILE *logfile;
     struct epoll_event ev, events[MAX_EVENTS];
     int nfds, epollfd;
     char letter = 'a';
@@ -148,11 +143,6 @@ int main(void) {
     int prod_ind = 0;
     int cons_ind = 0;
 
-    logfile = fopen("epoll_server.log", "w");
-    if (logfile == NULL) {
-        perror("fopen");
-        exit(1);
-    }
     semkey = ftok("./key.txt", 1);
     if (semkey == -1) {
         perror("ftok");
@@ -224,7 +214,7 @@ int main(void) {
                     exit(1);
                 }
             } else {
-                process_client(events[n].data.fd, buffer, &letter, &prod_ind, &cons_ind, logfile, semfd);
+                process_client(events[n].data.fd, buffer, &letter, &prod_ind, &cons_ind, semfd);
             }
         }
     }
@@ -233,6 +223,5 @@ int main(void) {
         perror("semctl");
         exit(1);
     }
-    fclose(logfile);
     exit(0);
 }
