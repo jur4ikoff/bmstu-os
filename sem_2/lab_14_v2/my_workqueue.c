@@ -94,7 +94,6 @@ void work2_func(struct work_struct *work)
     last_key_name[sizeof(last_key_name) - 1] = '\0';
     spin_unlock(&data_lock);
 
-    // printk(KERN_INFO "+ [WQ2] Key: %s Code: %d\n", last_key_name, last_key_code);
     printk(KERN_INFO "+ [WQ2] Key: %s Code: %d time: %lld ns\n", 
         last_key_name, last_key_code, diff_ns);
     printk(KERN_INFO "+ [WQ2] End\n");
