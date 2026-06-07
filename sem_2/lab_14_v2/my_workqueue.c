@@ -192,7 +192,7 @@ static int __init my_workqueue_init(void)
 {
     int ret;
 
-    printk(KERN_INFO "+ Module loading...\n");
+    printk(KERN_INFO "+ load my_workqueue\n");
 
     my_wq1 = alloc_workqueue("my_wq1", WQ_MEM_RECLAIM, 1);
     my_wq2 = alloc_workqueue("my_wq2", WQ_MEM_RECLAIM, 1);
@@ -224,14 +224,12 @@ static int __init my_workqueue_init(void)
         return -ENOMEM;
     }
 
-    printk(KERN_INFO "+ Module loaded successfully.\n");
+    printk(KERN_INFO "+ Module workqueue loaded.\n");
     return 0;
 }
 
 static void __exit my_workqueue_exit(void)
 {
-    printk(KERN_INFO "+ Module exiting...\n");
-
     if (proc_entry)
         proc_remove(proc_entry);
 
@@ -243,7 +241,7 @@ static void __exit my_workqueue_exit(void)
     destroy_workqueue(my_wq1);
     destroy_workqueue(my_wq2);
 
-    printk(KERN_INFO "+ Module unloaded.\n");
+    printk(KERN_INFO "+ Module workqueue unloaded.\n");
 }
 
 module_init(my_workqueue_init);
