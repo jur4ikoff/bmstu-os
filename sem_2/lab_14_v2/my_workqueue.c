@@ -101,7 +101,7 @@ void work2_func(struct work_struct *work)
 
 static bool input_handler(struct input_handle *handle, unsigned int type, unsigned int code, int value)
 {
-    if (type == EV_KEY && value == 1) {
+    if (type == EV_KEY && value == 0) {
         work_item1.start_time = ktime_get();
         work_item1.code = code;
         

@@ -34,7 +34,7 @@ DECLARE_TASKLET(my_tasklet, my_tasklet_fun);
 
 static bool input_handler(struct input_handle *handle, unsigned int type, unsigned int code, int value)
 {
-    if (type == EV_KEY && value == 1) {
+    if (type == EV_KEY && value == 0) {
         irq_start_time = ktime_get();
         last_key_code = code;
         
@@ -122,7 +122,7 @@ static int __init my_init(void)
 {
     int error;
     
-    printk(KERN_INFO "+ Module loading...\n");
+    printk(KERN_INFO "+ Module tasklet loading\n");
     
     error = input_register_handler(&my_handler);
     if (error) {
@@ -137,7 +137,7 @@ static int __init my_init(void)
         return -ENOMEM;
     }
 
-    printk(KERN_INFO "+ Module loaded successfully.\n");
+    printk(KERN_INFO "+ Module tasklet loaded\n");
     return 0;
 }
 
