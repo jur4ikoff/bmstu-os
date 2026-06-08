@@ -25,7 +25,8 @@ static const char *ascii[] = {
     "End", "Down", "Page Down", "Insert", "Delete"
 };
 
-static struct workqueue_struct *my_wq;
+static struct workqueue_struct *my_wq1;
+static struct workqueue_struct *my_wq2;
 
 struct my_work_struct {
     struct work_struct work;
@@ -51,10 +52,10 @@ void work1_func(struct work_struct *work)
 
     printk(KERN_INFO "+ [WQ1] Begin processing\n");
 
-    if (mw->code >= 0 && mw->code < ARRAY_SIZE(ascii)) {
+    if (mw->code < ARRAY_SIZE(ascii)) {
         kname = ascii[mw->code];
     }
-
+    
     end_time = ktime_get();
     diff_ns = ktime_to_ns(ktime_sub(end_time, mw->start_time));
 
@@ -64,7 +65,7 @@ void work1_func(struct work_struct *work)
     last_key_name[sizeof(last_key_name) - 1] = '\0';
     spin_unlock(&data_lock);
 
-    printk(KERN_INFO "+ [WQ1] Key: %s Code: %d time: %lld ns\n",
+    printk(KERN_INFO "+ [WQ1] Key: %s Code: %d time: %lld ns\n", 
            last_key_name, last_key_code, diff_ns);
     printk(KERN_INFO "+ [WQ1] End\n");
 }
@@ -77,13 +78,13 @@ void work2_func(struct work_struct *work)
     const char *kname = "Unknown";
 
     printk(KERN_INFO "+ [WQ2] Begin processing\n");
+    
+    msleep(10); 
 
-    msleep(10);
-
-    if (mw->code >= 0 && mw->code < ARRAY_SIZE(ascii)) {
+    if (mw->code < ARRAY_SIZE(ascii)) {
         kname = ascii[mw->code];
     }
-
+    
     end_time = ktime_get();
     diff_ns = ktime_to_ns(ktime_sub(end_time, mw->start_time));
 
@@ -93,33 +94,27 @@ void work2_func(struct work_struct *work)
     last_key_name[sizeof(last_key_name) - 1] = '\0';
     spin_unlock(&data_lock);
 
-    printk(KERN_INFO "+ [WQ2] Key: %s Code: %d time: %lld ns\n",
-           last_key_name, last_key_code, diff_ns);
+    printk(KERN_INFO "+ [WQ2] Key: %s Code: %d time: %lld ns\n", 
+        last_key_name, last_key_code, diff_ns);
     printk(KERN_INFO "+ [WQ2] End\n");
 }
 
-static bool input_handler(struct input_handle *handle,
-                          unsigned int type,
-                          unsigned int code,
-                          int value)
+static bool input_handler(struct input_handle *handle, unsigned int type, unsigned int code, int value)
 {
     if (type == EV_KEY && value == 0) {
         work_item1.start_time = ktime_get();
         work_item1.code = code;
-
+        
         work_item2.start_time = ktime_get();
         work_item2.code = code;
 
-        queue_work(my_wq, &work_item1.work);
-        queue_work(my_wq, &work_item2.work);
+        queue_work(my_wq1, &work_item1.work);
+        queue_work(my_wq2, &work_item2.work);
     }
-
     return false;
 }
 
-static int my_input_connect(struct input_handler *handler,
-                            struct input_dev *dev,
-                            const struct input_device_id *id)
+static int my_input_connect(struct input_handler *handler, struct input_dev *dev, const struct input_device_id *id)
 {
     struct input_handle *handle;
     int error;
@@ -145,7 +140,6 @@ static int my_input_connect(struct input_handler *handler,
 
 err_unregister:
     input_unregister_handle(handle);
-
 err_free:
     kfree(handle);
     return error;
@@ -154,17 +148,13 @@ err_free:
 static void my_input_disconnect(struct input_handle *handle)
 {
     printk(KERN_INFO "+ Disconnected from input device: %s\n", handle->dev->name);
-
     input_close_device(handle);
     input_unregister_handle(handle);
     kfree(handle);
 }
 
 static const struct input_device_id my_ids[] = {
-    {
-        .flags = INPUT_DEVICE_ID_MATCH_EVBIT,
-        .evbit = { BIT_MASK(EV_KEY) }
-    },
+    { .flags = INPUT_DEVICE_ID_MATCH_EVBIT, .evbit = { BIT_MASK(EV_KEY) } },
     { }
 };
 
@@ -179,14 +169,11 @@ static struct input_handler my_handler = {
 static int key_buf_show(struct seq_file *m, void *v)
 {
     spin_lock(&data_lock);
-
     if (last_key_code != -1)
         seq_printf(m, "Key: %s Code: %d\n", last_key_name, last_key_code);
     else
         seq_printf(m, "No keys pressed yet\n");
-
     spin_unlock(&data_lock);
-
     return 0;
 }
 
@@ -207,9 +194,13 @@ static int __init my_workqueue_init(void)
 
     printk(KERN_INFO "+ load my_workqueue\n");
 
-    my_wq = alloc_workqueue("my_wq", WQ_MEM_RECLAIM, 1);
-    if (!my_wq) {
+    my_wq1 = alloc_workqueue("my_wq1", WQ_MEM_RECLAIM, 1);
+    my_wq2 = alloc_workqueue("my_wq2", WQ_MEM_RECLAIM, 1);
+
+    if (!my_wq1 || !my_wq2) {
         printk(KERN_ERR "+ Create queue error\n");
+        if (my_wq1) destroy_workqueue(my_wq1);
+        if (my_wq2) destroy_workqueue(my_wq2);
         return -ENOMEM;
     }
 
@@ -219,7 +210,8 @@ static int __init my_workqueue_init(void)
     ret = input_register_handler(&my_handler);
     if (ret) {
         printk(KERN_ERR "Failed to register input handler: %d\n", ret);
-        destroy_workqueue(my_wq);
+        destroy_workqueue(my_wq1);
+        destroy_workqueue(my_wq2);
         return ret;
     }
 
@@ -227,7 +219,8 @@ static int __init my_workqueue_init(void)
     if (!proc_entry) {
         printk(KERN_ERR "+ Failed to create proc entry\n");
         input_unregister_handler(&my_handler);
-        destroy_workqueue(my_wq);
+        destroy_workqueue(my_wq1);
+        destroy_workqueue(my_wq2);
         return -ENOMEM;
     }
 
@@ -242,8 +235,11 @@ static void __exit my_workqueue_exit(void)
 
     input_unregister_handler(&my_handler);
 
-    flush_workqueue(my_wq);
-    destroy_workqueue(my_wq);
+    flush_workqueue(my_wq1);
+    flush_workqueue(my_wq2);
+
+    destroy_workqueue(my_wq1);
+    destroy_workqueue(my_wq2);
 
     printk(KERN_INFO "+ Module workqueue unloaded.\n");
 }
