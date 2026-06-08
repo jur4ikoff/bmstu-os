@@ -10,20 +10,12 @@
 #include <linux/spinlock.h>
 #include <linux/input.h>
 
+#include "key.h"
+
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Popov");
 
 #define DIR_NAME "key_buf_wq"
-
-static const char *ascii[] = {
-    "Reserved", "Esc", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "Backspace",
-    "Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "Enter", "Left Ctrl",
-    "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "`", "Left Shift", "\\",
-    "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "Right Shift", "*",
-    "Left Alt", "Space", "CapsLock", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10",
-    "NumLock", "ScrollLock", "Keypad 7", "Up", "Keypad 9", "-", "Left", "Keypad 5", "Right", "+",
-    "End", "Down", "Page Down", "Insert", "Delete"
-};
 
 static struct workqueue_struct *my_wq;
 
@@ -47,13 +39,11 @@ void work1_func(struct work_struct *work)
     struct my_work_struct *mw = container_of(work, struct my_work_struct, work);
     ktime_t end_time;
     s64 diff_ns;
-    const char *kname = "Unknown";
+    const char *kname;
 
     printk(KERN_INFO "+ [WQ1] Begin processing\n");
 
-    if (mw->code >= 0 && mw->code < ARRAY_SIZE(ascii)) {
-        kname = ascii[mw->code];
-    }
+    kname = get_key_name(mw->code);
 
     end_time = ktime_get();
     diff_ns = ktime_to_ns(ktime_sub(end_time, mw->start_time));
@@ -74,15 +64,13 @@ void work2_func(struct work_struct *work)
     struct my_work_struct *mw = container_of(work, struct my_work_struct, work);
     ktime_t end_time;
     s64 diff_ns;
-    const char *kname = "Unknown";
+    const char *kname;
 
     printk(KERN_INFO "+ [WQ2] Begin processing\n");
 
     msleep(10);
 
-    if (mw->code >= 0 && mw->code < ARRAY_SIZE(ascii)) {
-        kname = ascii[mw->code];
-    }
+    kname = get_key_name(mw->code);
 
     end_time = ktime_get();
     diff_ns = ktime_to_ns(ktime_sub(end_time, mw->start_time));
